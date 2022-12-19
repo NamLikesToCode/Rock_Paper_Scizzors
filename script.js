@@ -39,6 +39,9 @@ function playround(playerSelection,computerSelection){
         
         let gameTies = document.querySelector("#gameties");
         gameTies.innerText = `Game Ties: ${gameties}`;
+        let gamesplayed = document.querySelector("#gamesPlayed");
+        gamesplayed.innerText = `Games Played: ${gamesPlayed}`;
+
         
 
     }else if ((playerSelection == 'rock' && computerSelection == 'scissors') || 
@@ -50,7 +53,9 @@ function playround(playerSelection,computerSelection){
                 console.log(`Player Score: ${playerwins}`);
                 const results = document.querySelector(".Results");
         results.innerText = `You WON! You picked ${playerSelection} while computer chose ${computerSelection}`;
-
+        
+        let gamesplayed = document.querySelector("#gamesPlayed");
+        gamesplayed.innerText = `Games Played: ${gamesPlayed}`;
 
 
         let playerscore = document.querySelector("#playerscore");
@@ -68,7 +73,8 @@ function playround(playerSelection,computerSelection){
          
         let computerScore = document.querySelector("#computerscore");
         computerScore.innerText = `Computer Score: ${computerwins}`;
-       
+        let gamesplayed = document.querySelector("#gamesPlayed");
+        gamesplayed.innerText = `Games Played: ${gamesPlayed}`;
         
          }
 }
@@ -85,6 +91,20 @@ function game(){
 
     }
 }
+
+const checkForWinner = (playerwins,computerwins) => {
+    if (playerwins === 5 && playerwins > computerwins) {
+        const winner = document.querySelector("#Winner");
+        winner.innerText = `You Won ${playerwins} to ${computerwins}, You defeated the computer`
+    } 
+    else if (computerwins === 5 && computerwins > playerwins){
+        const winner = document.querySelector("#Winner");
+        winner.innerText = `You Lose ${playerwins} to ${computerwins}, You were defeated by the computer`
+
+    }
+}
+
+
 
 // game();
 
@@ -103,6 +123,7 @@ rockButton.addEventListener("click", () => {
     const computerSelection = getComputerChoice();
     console.log("rock");
     playround(playerSelection,computerSelection)
+    checkForWinner(playerwins,computerwins);
 })
 
 paperbutton.addEventListener("click", () => {
@@ -110,6 +131,7 @@ paperbutton.addEventListener("click", () => {
     const computerSelection = getComputerChoice();
     console.log("paper");
     playround(playerSelection,computerSelection)
+    checkForWinner(playerwins,computerwins);
 })
 
 scissorsbutton.addEventListener("click", () => {
@@ -117,6 +139,7 @@ scissorsbutton.addEventListener("click", () => {
     const computerSelection = getComputerChoice();
     console.log("scissors");
     playround(playerSelection,computerSelection)
+    checkForWinner(playerwins,computerwins);
 })
 
 
