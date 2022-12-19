@@ -1,0 +1,55 @@
+.Header {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    color:navy;
+    
+}
+
+body{
+    background-color: bisque;
+}
+#rockbutton,#paperbutton,#scissorsbutton {
+    height: 100px;
+    width: 200px;
+    margin: 50px;
+    font-weight: 600;
+    border-radius: 10px;
+    
+    
+        
+}
+.ButtonHolder{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+}
+
+
+.Results {
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    color:green;
+}
+
+#playerscore {
+    color: blue;
+}
+
+#computerscore {
+    color: red;    
+}
+
+#playerscore,#computerscore,#gameties {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    font-size: 40px;
+}
